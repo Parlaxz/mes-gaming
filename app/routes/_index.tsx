@@ -7,6 +7,7 @@ import type {
   FeaturedCollectionFragment,
   RecommendedProductsQuery,
 } from 'storefrontapi.generated';
+import Bookings from '~/components/Booking';
 
 export const meta: V2_MetaFunction = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -27,6 +28,7 @@ export default function Homepage() {
     <div className="home">
       <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
+      <Bookings/>
     </div>
   );
 }

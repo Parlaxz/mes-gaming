@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MonthCalendar from "./MonthCalendar";
 
 const API_ENDPOINT = "https://api.cal.com/v1/bookings?apiKey=cal_live_133ab530e7189387cff734fc79522505";
 
@@ -42,6 +43,7 @@ const Bookings: React.FC = () => {
         <ul>
           {bookings.map((booking) => (
             <li key={booking.id}>
+                {console.log(booking)}
               <h2>{booking.title}</h2>
               <p>Start Time: {booking.startTime}</p>
               <p>End Time: {booking.endTime}</p>
@@ -49,6 +51,7 @@ const Bookings: React.FC = () => {
           ))}
         </ul>
       )}
+      <MonthCalendar bookings={bookings}/>
     </div>
   );
 };
